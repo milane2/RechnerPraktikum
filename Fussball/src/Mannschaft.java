@@ -2,18 +2,19 @@ import java.util.ArrayList;
 
 public class Mannschaft {
 
-    String name;
-    Trainer trainer;
-    Torwart torwart;
+    private String name;
+    private Trainer trainer;
+    private Torwart torwart;
     private ArrayList<Spieler> spielerListe;
 
 
-    public Mannschaft(String Trainer, String Torwart, ArrayList <Spieler> spielerListe ){
+    public Mannschaft (String Trainer, String Torwart, ArrayList <Spieler> spielerListe ){
     }
     public String getName(){
         return  name;
     }
     public void setName() {
+
         this.name = name;
     }
     public Trainer getTrainer(){
@@ -37,10 +38,10 @@ public class Mannschaft {
         this.spielerListe = spielerListe;
     }
 
-   // public int getMotivation(){
-    //   return ;
+    //public int getMotivation(){
+       ;
 
-    //}
+    // }
 
 
 
