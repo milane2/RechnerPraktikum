@@ -39,11 +39,14 @@ public class Mannschaft {
     }
 
     //public int getMotivation(){
-       ;
+    ;
 
     // }
 
+    //public int getStaerke(){
+    ;
 
+    // }
 
 
 
