@@ -15,6 +15,27 @@ public class Spiel {
         this.spielverlauf = spielverlauf;
     }
 
+    public int getName(){
 
+        return name;
+    }
+    public Mannschaft getHeimMannschaft(){
+
+        return  heimMannschaft;
+    }
+
+    public Mannschaft getGastMannschaft(){
+
+        return  gastMannschaft;
+    }
+
+    public Ergebnis getErgebnis(){
+
+        return  ergebnis;
+    }
+    public StringBuilder getSpielverlauf(){
+
+        return  spielverlauf;
+    }
 
 }

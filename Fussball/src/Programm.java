@@ -13,7 +13,5 @@ public class Programm {
         Torwart torwart1 = new Torwart("Nicom arusi",22,6,8,5);
         System.out.println(); torwart1.getName();
         torwart1.setName();
-
-
     }
 }

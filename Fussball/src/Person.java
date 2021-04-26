@@ -7,8 +7,6 @@ public abstract class Person {
         this.name = name;
         this.alter = alter;
     }
-
-
     public String getName(){
         return  name;
     }
@@ -22,9 +20,4 @@ public abstract class Person {
     public void setAlter() {
         this.alter = alter;
     }
-
-
-
-
-
 }

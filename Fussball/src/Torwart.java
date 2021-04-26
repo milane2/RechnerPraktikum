@@ -6,14 +6,11 @@ public class Torwart extends Spieler {
         super(name,alter,staerke,0,motiation,0);
         this.reaktion = reaktion;
     }
-
     public int getReaktion(){
         return  reaktion;
     }
     public void setReaktion(){
         this.reaktion = reaktion;
     }
-
-
 }
 
