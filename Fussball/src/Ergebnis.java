@@ -19,4 +19,8 @@ public class Ergebnis {
     public int addToreHeim() {
         return this.toreHeim++;
     }
+    // public String toString(){
+    // String abc;
+    //   return abc ;
+    // }
 }

@@ -16,26 +16,24 @@ public class Spiel {
     }
 
     public int getName(){
-
         return name;
     }
     public Mannschaft getHeimMannschaft(){
-
         return  heimMannschaft;
     }
 
     public Mannschaft getGastMannschaft(){
-
         return  gastMannschaft;
     }
 
     public Ergebnis getErgebnis(){
-
         return  ergebnis;
     }
     public StringBuilder getSpielverlauf(){
-
         return  spielverlauf;
     }
-
+    // public String toString(){
+    // String abc;
+    //   return abc ;
+    // }
 }

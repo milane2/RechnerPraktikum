@@ -1,12 +1,9 @@
 public class Spieler extends Person {
 
-
-
     private int staerke;
     private int torschuss;
     private int motiation;
     private int erzielteTorschuesse;
-
 
     public Spieler(String name, int alter, int staerke, int torschuss, int motiation, int erzielteTorschuesse){
         super(name,alter);
@@ -14,8 +11,6 @@ public class Spieler extends Person {
         this.torschuss = torschuss;
         this.motiation = motiation;
         this.erzielteTorschuesse = erzielteTorschuesse;
-
-
     }
 
     public int getStaerke(){
@@ -24,12 +19,10 @@ public class Spieler extends Person {
     public void setStaerke() {
         this.staerke = staerke;
     }
-
     public int getTorschuss(){
         return  torschuss;
     }
     public void setTorschuss() {
-
         this.torschuss = torschuss;
     }
 
@@ -47,10 +40,8 @@ public class Spieler extends Person {
     public void setErzielteTorschuesse() {
         this.erzielteTorschuesse =erzielteTorschuesse ;
     }
-
-
-
+    // public String toString(){
+    // String abc;
+    //   return abc ;
+    // }
 }
-
-
-

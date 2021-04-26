@@ -12,4 +12,8 @@ public class Trainer extends Person{
     public void seterfahrung() {
         this.erfahrung = erfahrung;
     }
+    // public String toString(){
+    // String abc;
+    //   return abc ;
+    // }
 }
