@@ -7,64 +7,31 @@ public class Mannschaft {
     private Torwart torwart;
     private ArrayList<Spieler> spielerListe;
 
+    public Mannschaft (Trainer Trainer, Torwart Torwart, ArrayList <Spieler> spielerListe ){
 
-    public Mannschaft (String Trainer, String Torwart, ArrayList <Spieler> spielerListe ){
-    }
-    public String getName(){
-        return  name;
-    }
-    public void setName() {
-
+        this.trainer = trainer;
+        this.torwart = torwart;
+        this.spielerListe = spielerListe;
         this.name = name;
     }
-    public Trainer getTrainer(){
-        return  trainer;
+
+    public int getMotivation(){
+        int summe= 0;
+        for(Spieler spieler : this.spielerListe){
+            summe += spieler.getMotiation();
+        }
+        summe += this.torwart.getMotiation();
+            return summe / (this.spielerListe.size() + 1);
+        }
+
+
+    public int getStaerke() {
+        int summe2= 0;
+        for(Spieler spieler : this.spielerListe){
+            summe2 += spieler.getStaerke();
+        }
+        summe2 += this.torwart.getStaerke();
+            return summe2 / (this.spielerListe.size() + 1);
+        }
+
     }
-    public void setTrainer() {
-        this.trainer = trainer;
-    }
-
-    public Torwart getTorwart(){
-        return  torwart;
-    }
-    public void setTorwart() {
-        this.torwart = torwart;
-    }
-
-    public ArrayList<Spieler> getSpielerListe(){
-        return  spielerListe;
-    }
-    public void setSpielerListe() {
-        this.spielerListe = spielerListe;
-    }
-
-    //public int getMotivation(){
-    ;
-
-    // }
-
-    //public int getStaerke(){
-    ;
-
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

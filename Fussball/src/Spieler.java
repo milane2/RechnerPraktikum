@@ -13,7 +13,7 @@ public class Spieler extends Person {
         this.staerke = staerke;
         this.torschuss = torschuss;
         this.motiation = motiation;
-        this.erzielteTorschuesse = erzielteTorschuesse ;
+        this.erzielteTorschuesse = erzielteTorschuesse;
 
 
     }
