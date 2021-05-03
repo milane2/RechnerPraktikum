@@ -56,8 +56,12 @@ public class Mannschaft {
         summe2 += this.torwart.getStaerke();
         return summe2 / (this.spielerListe.size() + 1);
     }
-    // public String toString(){
-    // String abc;
-    //   return abc ;
-    // }
+    public String toString(){
+        String ausgabe;
+        ausgabe ="\nName: " + getName();
+        ausgabe += "\nTrainer: " + getTrainer();
+        ausgabe += "\nTorwart: " + getTorwart();
+        ausgabe += "\nSpielerListe: " + getSpielerListe();
+        return ausgabe;
+    }
 }

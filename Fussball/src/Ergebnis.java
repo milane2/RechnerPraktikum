@@ -5,7 +5,7 @@ public class Ergebnis {
 
     public Ergebnis(){
         this.toreGast = 0;
-        this.toreHeim=0;
+        this.toreHeim = 0;
     }
     public int getToreGast() {
         return this.toreGast;
@@ -19,8 +19,11 @@ public class Ergebnis {
     public int addToreHeim() {
         return this.toreHeim++;
     }
-    // public String toString(){
-    // String abc;
-    //   return abc ;
-    // }
+
+    public String toString(){
+        String ausgabe;
+        ausgabe ="\nTorHeim: " + getToreHeim();
+        ausgabe += "\nTorGast: " + getToreGast();
+        return ausgabe;
+    }
 }
