@@ -40,8 +40,15 @@ public class Spieler extends Person {
     public void setErzielteTorschuesse() {
         this.erzielteTorschuesse =erzielteTorschuesse ;
     }
-    // public String toString(){
-    // String abc;
-    //   return abc ;
-    // }
+
+    public String toString(){
+        String ausgabe;
+        ausgabe ="\nName: " + getName();
+        ausgabe += "\nAlter: " + getAlter();
+        ausgabe += "\nStärke: " + getStaerke();
+        ausgabe += "\nTorschuss: " + getTorschuss();
+        ausgabe += "\nMotivation: " + getMotiation();
+        ausgabe += "\nbislange erzielte Tore: " + getErzielteTorschuesse();
+        return ausgabe;
+    }
 }
