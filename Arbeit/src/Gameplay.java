@@ -7,13 +7,14 @@ public class Gameplay {
     private static final int DBNA = 10;
 
     private static int ermittelMannschaftsWert(Mannschaft mannschaft){
-        return 536; // Noch nicht fertig!!! Überarbeiten
+        int summe= 0;
+        // getMotivation() + getStaerke();
+        return ;
     }
     private static boolean erzieltTor(Spieler schuetze, Torwart torwart) {
         return; // Noch nicht fertig!!! Überarbeiten
     }
     public static void spielen(Spiel spiel) {
-
     }
 }
 //Der Mannschaftswert ermittelt aus Produkt  Stärke  Motivation der Mannschaft
@@ -28,8 +29,7 @@ public class Gameplay {
 //        int summe= 0;
 //        for(Spieler spieler : this.spielerListe){
 //            summe += spieler.getMotiation();
-//        }
-//        summe += this.torwart.getMotiation();
+//      }   summe += this.torwart.getMotiation();
 //        return summe / (this.spielerListe.size() + 1);
 //    }
 //-----------------------------------------------------------------------------------
@@ -40,5 +40,3 @@ public class Gameplay {
 //        }
 //        summe2 += this.torwart.getStaerke();
 //        return summe2 / (this.spielerListe.size() + 1);
-//
-//
