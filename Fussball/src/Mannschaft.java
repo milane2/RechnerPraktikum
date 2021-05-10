@@ -7,7 +7,7 @@ public class Mannschaft {
     private Torwart torwart;
     private ArrayList<Spieler> spielerListe;
 
-    public Mannschaft (String name,Trainer Trainer, Torwart Torwart, ArrayList <Spieler> spielerListe ){
+    public Mannschaft (String name,Trainer trainer, Torwart torwart, ArrayList <Spieler> spielerListe ){
 
         this.name = name;
         this.trainer = trainer;

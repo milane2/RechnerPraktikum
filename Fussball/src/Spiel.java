@@ -1,6 +1,5 @@
 public class Spiel {
 
-
     private Mannschaft heimMannschaft;
     private Mannschaft gastMannschaft;
     private Ergebnis ergebnis;
@@ -13,15 +12,12 @@ public class Spiel {
         this.ergebnis = ergebnis;
         this.spielverlauf = spielverlauf;
     }
-
     public Mannschaft getHeimMannschaft(){
         return  heimMannschaft;
     }
-
     public Mannschaft getGastMannschaft(){
         return  gastMannschaft;
     }
-
     public Ergebnis getErgebnis(){
         return  ergebnis;
     }

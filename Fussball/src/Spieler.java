@@ -26,7 +26,6 @@ public class Spieler extends Person {
         this.torschuss = torschuss;
     }
 
-
     public int getMotiation(){
         return motiation ;
     }
@@ -43,7 +42,7 @@ public class Spieler extends Person {
 
     public String toString(){
         String ausgabe;
-        ausgabe ="\nName: " + getName();
+        ausgabe = "\nName: " + getName();
         ausgabe += "\nAlter: " + getAlter();
         ausgabe += "\nStärke: " + getStaerke();
         ausgabe += "\nTorschuss: " + getTorschuss();

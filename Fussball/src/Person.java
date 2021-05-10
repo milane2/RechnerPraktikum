@@ -13,7 +13,6 @@ public abstract class Person {
     public void setName() {
         this.name = name;
     }
-
     public int getAlter(){
         return  alter;
     }
