@@ -12,11 +12,11 @@ public class Trainer extends Person{
     public void seterfahrung() {
         this.erfahrung = erfahrung;
     }
-     public String toString(){
-         String ausgabe;
-         ausgabe = "\nTrainer: ";
-         ausgabe += super.toString();
-         ausgabe += "\nerfahrung: " + getErfahrung();
-         return ausgabe;
+    public String toString(){
+        String ausgabe;
+        ausgabe = "\nTrainer: ";
+        ausgabe += super.toString();
+        ausgabe += "\nerfahrung: " + getErfahrung();
+        return ausgabe;
     }
 }
