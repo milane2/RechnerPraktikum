@@ -14,15 +14,5 @@ public class Programm {
         System.out.println(); torwart1.getName();
         torwart1.setName();
 
-
-
-
-
-
-
-
-
-
-
     }
 }
