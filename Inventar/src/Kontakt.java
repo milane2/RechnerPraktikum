@@ -5,6 +5,7 @@ public class Kontakt {
     String telMobil;
 
     public Kontakt(String e_mail, String telBuero, String telMobil){
+
         this.e_mail = e_mail;
         this.telBuero = telBuero;
         this.telMobil = telMobil;
@@ -20,14 +21,21 @@ public class Kontakt {
         return telMobil;
     }
     //SET
-    public void setE_mail(){
+    public void setE_mail(String e_mail){
         this.e_mail = e_mail;
     }
-    public void setTelBuero(){
+    public void setTelBuero(String telBuero){
         this.telBuero = telBuero;
     }
-    public void setTelMobil(){
+    public void setTelMobil(String telMobil){
         this.telMobil = telMobil;
     }
-
+    @Override
+    public String toString(){
+        String ausgabe;
+        ausgabe = "\nE_mail: " + getE_mail();
+        ausgabe += "\nTelBuero: " + getTelBuero();
+        ausgabe += "\nTelMobil: " + getTelMobil();;
+        return ausgabe;
+    }
 }

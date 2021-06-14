@@ -15,8 +15,16 @@ public class Stuhl extends Moebelstueck {
     public void sethoeheSitz(){
         this.hoeheSitz = hoeheSitz;
     }
+
     @Override
     public String toString(){
-        return getClass().getSimpleName() + "[" + inventarnr + ", " +  bezeichnung + "]";
+        String ausgabe;
+        ausgabe ="\nInventarnr: " + getInventarnr();
+        ausgabe += "\nBezeichnung: " + getBezeichnung();
+        ausgabe += "\nBeschreibung: " + getBeschreibung();
+        ausgabe += "\nMaterial: " + getMaterial();
+        ausgabe += "\nGewicht: " + getGewicht();
+        ausgabe += "\nSitzhöhe: " + getHoeheSitz();
+        return ausgabe;
     }
 }

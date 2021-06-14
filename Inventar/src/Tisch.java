@@ -31,8 +31,18 @@ public class Tisch extends Moebelstueck {
     public void setBreite(){
         this.breite = breite;
     }
+
     @Override
     public String toString(){
-        return getClass().getSimpleName() + "[" + inventarnr + ", " +  bezeichnung + "]";
+        String ausgabe;
+        ausgabe = "\nInventarnr: " + getInventarnr();
+        ausgabe += "\nBezeichnung: " + getBezeichnung();
+        ausgabe += "\nBeschreibung: " + getBeschreibung();
+        ausgabe += "\nMaterial: " + getMaterial();
+        ausgabe += "\nGewicht: " + getGewicht();
+        ausgabe += "\nHöhe: " + getHoehe();
+        ausgabe += "\nLänge: " + getLaenge();
+        ausgabe += "\nBreite: " +getbreite();
+        return ausgabe;
     }
 }
