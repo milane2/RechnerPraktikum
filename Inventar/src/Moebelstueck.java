@@ -1,10 +1,10 @@
 public abstract class Moebelstueck {
 
-    String inventarnr;
-    String bezeichnung;
-    String beschreibung;
-    String material;
-    double gewicht;
+    private String inventarnr;
+    private String bezeichnung;
+    private String beschreibung;
+    private String material;
+    private double gewicht;
 
 
     public Moebelstueck (String inventarnr, String bezeichnung) {
@@ -29,16 +29,16 @@ public abstract class Moebelstueck {
         return gewicht;
     }
     //SET
-    public void setBezeichnung(){
+    public void setBezeichnung(String bezeichnung){
         this.bezeichnung = bezeichnung;
     }
-    public void setBeschreibung(){
+    public void setBeschreibung(String beschreibnung){
         this.beschreibung = beschreibung;
     }
-    public void setMaterial(){
+    public void setMaterial(String material){
         this.material = material;
     }
-    public void setGewicht(){
+    public void setGewicht(String gewicht){
         this.gewicht = gewicht;
     }
     public String toString(){

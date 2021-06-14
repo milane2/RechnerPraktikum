@@ -1,6 +1,6 @@
 public class Stuhl extends Moebelstueck {
 
-    double hoeheSitz;
+    private double hoeheSitz;
 
     public Stuhl (String inventarnr, String bezeichnung,double hoehe, double laenge, double breite) {
 
@@ -12,7 +12,7 @@ public class Stuhl extends Moebelstueck {
         return hoeheSitz;
     }
     //SET
-    public void sethoeheSitz(){
+    public void sethoeheSitz(double hoeheSitz){
         this.hoeheSitz = hoeheSitz;
     }
 

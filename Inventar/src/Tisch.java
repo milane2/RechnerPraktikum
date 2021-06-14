@@ -1,8 +1,8 @@
 public class Tisch extends Moebelstueck {
 
-    double hoehe;
-    double laenge;
-    double breite;
+    private double hoehe;
+    private double laenge;
+    private double breite;
 
     public Tisch (String inventarnr, String bezeichnung,double hoehe, double laenge, double breite) {
 
@@ -22,13 +22,13 @@ public class Tisch extends Moebelstueck {
         return breite;
     }
     //SET
-    public void sethoehe(){
+    public void sethoehe(double hoehe){
         this.hoehe = hoehe;
     }
-    public void setLaenge(){
+    public void setLaenge(double laenge){
         this.laenge = laenge;
     }
-    public void setBreite(){
+    public void setBreite(double breite){
         this.breite = breite;
     }
 

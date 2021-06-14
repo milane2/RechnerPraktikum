@@ -16,20 +16,20 @@ public class Spieler extends Person {
     public int getStaerke(){
         return  staerke;
     }
-    public void setStaerke() {
+    public void setStaerke(int staerke) {
         this.staerke = staerke;
     }
     public int getTorschuss(){
         return  torschuss;
     }
-    public void setTorschuss() {
+    public void setTorschuss(int torschuss) {
         this.torschuss = torschuss;
     }
 
     public int getMotiation(){
         return motiation ;
     }
-    public void setMotiation() {
+    public void setMotiation(int motiation) {
         this.motiation = motiation;
     }
 

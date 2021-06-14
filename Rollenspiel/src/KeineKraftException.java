@@ -9,7 +9,7 @@ public class KeineKraftException extends Exception{
         this.aktion = aktion;
     }
 public String getMessage(){
-        String meldung ="";
+        String meldung = name +" hat keine Kraft für " + aktion + "mehr!";
         return meldung;
 }
 

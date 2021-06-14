@@ -1,8 +1,8 @@
 public class Techniker {
 
-    String vorname;
-    String nachname;
-    Kontakt kontakt;
+    private String vorname;
+    private String nachname;
+    private Kontakt kontakt;
 
     public Techniker(String vorname, String nachname, Kontakt kontakt ){
 

@@ -9,7 +9,7 @@ public class Torwart extends Spieler {
     public int getReaktion(){
         return  reaktion;
     }
-    public void setReaktion(){
+    public void setReaktion(int reaktion){
         this.reaktion = reaktion;
     }
     public String toString(){

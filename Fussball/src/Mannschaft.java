@@ -17,26 +17,26 @@ public class Mannschaft {
     public String getName(){
         return  name;
     }
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
     public Trainer getTrainer(){
         return  trainer;
     }
-    public void setTrainer() {
+    public void setTrainer(Trainer trainer) {
         this.trainer = trainer;
     }
     public Torwart getTorwart(){
         return torwart;
     }
-    public void setTorwart() {
+    public void setTorwart(Torwart torwart) {
         this.torwart = torwart;
     }
 
     public ArrayList getSpielerListe(){
         return spielerListe;
     }
-    public void setSpielerListe() { //spielerListe : ArrayList<Spieler>//
+    public void setSpielerListe(ArrayList<Spieler> spielerListe) { //spielerListe : ArrayList<Spieler>//
         this.spielerListe = spielerListe;
     }
 

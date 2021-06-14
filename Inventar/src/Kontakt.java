@@ -1,8 +1,8 @@
 public class Kontakt {
 
-    String e_mail;
-    String telBuero;
-    String telMobil;
+    private String e_mail;
+    private String telBuero;
+    private String telMobil;
 
     public Kontakt(String e_mail, String telBuero, String telMobil){
 

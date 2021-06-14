@@ -9,7 +9,7 @@ public class Trainer extends Person{
     public int getErfahrung(){
         return  erfahrung;
     }
-    public void seterfahrung() {
+    public void seterfahrung(int erfahrung) {
         this.erfahrung = erfahrung;
     }
     public String toString(){

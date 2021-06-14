@@ -10,13 +10,13 @@ public abstract class Person {
     public String getName(){
         return  name;
     }
-    public void setName() {
+    public void setName() { //public void setName(String name)
         this.name = name;
     }
     public int getAlter(){
         return  alter;
     }
-    public void setAlter() {
+    public void setAlter(int alter) {
         this.alter = alter;
     }
 }
