@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Arbeit/Arbeit.iml" filepath="$PROJECT_DIR$/Arbeit/Arbeit.iml" />
       <module fileurl="file://$PROJECT_DIR$/Fussball/Fussball.iml" filepath="$PROJECT_DIR$/Fussball/Fussball.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Inventar/Inventar.iml" filepath="$PROJECT_DIR$/Inventar/Inventar.iml" />
       <module fileurl="file://$PROJECT_DIR$/RP.iml" filepath="$PROJECT_DIR$/RP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Unfertig/Unfertig.iml" filepath="$PROJECT_DIR$/Unfertig/Unfertig.iml" />
     </modules>
   </component>
 </project>
