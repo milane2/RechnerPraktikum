@@ -6,10 +6,9 @@ public class Raum {
  private Techniker techniker;
  private ArrayList<Moebelstueck> moebelListe;
 
- public Raum(String raumNr, Techniker techniker ){
+ public Raum(String raumNr){
 
   this.raumNr = raumNr;
-  this.techniker = techniker;
  }
 
  public String getRaumNr() {
@@ -39,15 +38,19 @@ public class Raum {
  }
 
  public void addMoebel(Moebelstueck moebelstueck){
-  return this.moebelstueck++;
+
+  return this.moebel++;
  }
 
  public void removeMoebel(Moebelstueck moebelstueck){
-  return this.moebelstueck--;
+
+  return this.moebel--;
  }
  public int getAnzahlMoebel(){
+
   return anzahlMoebel;
  }
+
  public double getGewichtGesamt(){
   return gewichtGesamt;
  }
