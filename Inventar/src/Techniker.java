@@ -6,7 +6,7 @@ public class Techniker {
 
     public Techniker(String vorname, String nachname, Kontakt kontakt ){
 
-        this. vorname = vorname;
+        this.vorname = vorname;
         this.nachname = nachname;
         this.kontakt = kontakt;
     }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Raum {
 
  private String raumNr;
@@ -18,12 +20,26 @@ public class Raum {
   return techniker;
  }
 
- public void addMoebel(Moebelstueck moebelstueck){
-  return this.moebelstueck++;
- }
-
  public ArrayList<Moebelstueck> getMoebelListe() {
   return moebelListe;
+ }
+ public ArrayList<Moebelstueck> getmoebel(String inventarNr) {
+  return moebel;
+ }
+ public void setRaumNr(String raumNr){
+  this.raumNr = raumNr;
+ }
+
+ public void setTechniker(Techniker techniker){
+  this.techniker = techniker;
+ }
+
+ public void setMoebelListe(ArrayList<Moebelstueck> moebelListe){
+  this.moebelListe = moebelListe;
+ }
+
+ public void addMoebel(Moebelstueck moebelstueck){
+  return this.moebelstueck++;
  }
 
  public void removeMoebel(Moebelstueck moebelstueck){

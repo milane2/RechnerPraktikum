@@ -30,6 +30,7 @@ public class Kontakt {
     public void setTelMobil(String telMobil){
         this.telMobil = telMobil;
     }
+
     @Override
     public String toString(){
         String ausgabe;
