@@ -27,9 +27,10 @@ public abstract class Moebelstueck {
     public String getMaterial(){
         return material;
     }
-    public double getGewicht(){
+    public static double getGewicht(){
         return gewicht;
     }
+
     //SET
     public void setInventarNr(String inventarNr){
         this.inventarNr = inventarNr;
