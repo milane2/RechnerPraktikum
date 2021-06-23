@@ -6,7 +6,7 @@ public class Raum {
  private Techniker techniker;
  private ArrayList<Moebelstueck> moebelListe;
 
- public Raum(String raumNr){
+ public Raum(String raumNr) {
   this.raumNr = raumNr;
  }
 
@@ -37,6 +37,7 @@ public class Raum {
 //    return moebelListe.get(i);
 //   }
 //  }
+
  public void setRaumNr(String raumNr) {
   this.raumNr = raumNr;
  }
@@ -59,25 +60,25 @@ public class Raum {
 
  public int getAnzahlMoebel() {
   moebelListe.get(moebelListe.size());
-
-
-  return AnzahlMoebel;
+  return moebelListe.size();
  }
 
  public double getGewichtGesamt() {
-  int summe2= 0;
-  for(Moebelstueck gewicht : this.moebelListe){
-   summe2 = (int) (summe2 + Moebelstueck.getGewicht());
+  int summe= 0;
+  for(Moebelstueck gewicht : this.moebelListe) {
+   summe = (int) (summe + Moebelstueck.getGewicht());
   }
-  return summe2 / (this.moebelListe.size() + 1);
+  return summe / (this.moebelListe.size() + 1);
  }
 
+ @Override
  public String toString() {
   String ausgabe;
   ausgabe = "\nRaumnNummer: " + getRaumNr();
   ausgabe += "\nTechniker: " + getTechniker();
   ausgabe += "\nMöbelListe: " + getMoebelListe();
-
+  ausgabe += "\nAnzahl: " + getAnzahlMoebel();
+  ausgabe += "\nGesamtGewicht: " + getGewichtGesamt();
   return ausgabe;
  }
 }
