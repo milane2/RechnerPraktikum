@@ -9,6 +9,6 @@ public class MoebelNichtGefundenExeption extends Exception {
         return inventarNr;
     }
     public String getMessage(){
-        return "Die Inventarnummer konnte nicht gefunden werden! ";
+        return "Das Möbelstück mit der Inventarnummer:"+ this.inventarNr + "konnte nicht gefunden werden! ";
     }
 }

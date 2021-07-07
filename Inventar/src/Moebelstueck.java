@@ -27,7 +27,7 @@ public abstract class Moebelstueck {
     public String getMaterial(){
         return material;
     }
-    public static double getGewicht(){
+    public double getGewicht(){
         return gewicht;
     }
 

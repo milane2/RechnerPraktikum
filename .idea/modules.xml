@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Inventar/Inventar.iml" filepath="$PROJECT_DIR$/Inventar/Inventar.iml" />
       <module fileurl="file://$PROJECT_DIR$/RP.iml" filepath="$PROJECT_DIR$/RP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unfertig/Unfertig.iml" filepath="$PROJECT_DIR$/Unfertig/Unfertig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
     </modules>
   </component>
 </project>

@@ -4,7 +4,7 @@ public class Stuhl extends Moebelstueck {
 
     public Stuhl (String inventarnr, String bezeichnung,double hoehe, double laenge, double breite) {
 
-        super(inventarnr, bezeichnung);
+        super(inventarNr, bezeichnung);
         this.hoeheSitz = hoeheSitz;
     }
     //GET
@@ -19,7 +19,7 @@ public class Stuhl extends Moebelstueck {
     @Override
     public String toString(){
         String ausgabe;
-        ausgabe ="\nInventarnr: " + getInventarnr();
+        ausgabe ="\nInventarnr: " + getInventarNr();
         ausgabe += "\nBezeichnung: " + getBezeichnung();
         ausgabe += "\nBeschreibung: " + getBeschreibung();
         ausgabe += "\nMaterial: " + getMaterial();

@@ -1,16 +1,13 @@
 public class Tisch extends Moebelstueck {
-
+    
     private double hoehe;
     private double laenge;
     private double breite;
 
-    public Tisch (String inventarnr, String bezeichnung,double hoehe, double laenge, double breite) {
-
-        super(inventarnr, bezeichnung);
-        this.hoehe = hoehe;
-        this.laenge = laenge;
-        this.breite = breite;
+    public Tisch (String inventarnr, String bezeichnung) {
+        super(inventarNr, bezeichnung);
     }
+
     //GET
     public double getHoehe(){
         return hoehe;
@@ -33,9 +30,9 @@ public class Tisch extends Moebelstueck {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String ausgabe;
-        ausgabe = "\nInventarnr: " + getInventarnr();
+        ausgabe = "\nInventarnr: " + getInventarNr();
         ausgabe += "\nBezeichnung: " + getBezeichnung();
         ausgabe += "\nBeschreibung: " + getBeschreibung();
         ausgabe += "\nMaterial: " + getMaterial();

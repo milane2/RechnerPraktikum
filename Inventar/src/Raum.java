@@ -8,6 +8,7 @@ public class Raum {
 
  public Raum(String raumNr) {
   this.raumNr = raumNr;
+  this.moebelListe = new ArrayList<>();
  }
 
  public String getRaumNr() {
@@ -22,7 +23,8 @@ public class Raum {
   return moebelListe;
  }
  public Moebelstueck getmoebel(String inventarNr) throws MoebelNichtGefundenExeption {
-// Variante 1 (sogenannte FOR EACH-SCHLEIFE):
+
+  // Variante 1 (sogenannte FOR EACH-SCHLEIFE):
   for (Moebelstueck m : moebelListe) {
    if (m.getInventarNr().equals(inventarNr)) {
     return m;
@@ -58,18 +60,28 @@ public class Raum {
   moebelListe.remove(moebelstueck);
  }
 
+ public Moebelstueck getMoebel(String InventarNr){
+  for(Moebelstueck moebel : moebelListe){
+   if(moebel.getInventarNr().equals(inventarNr)){
+    return moebel;
+   }
+  }
+  throw new MoebelNichtGefundenExeption(inventarNr);
+ }
+
  public int getAnzahlMoebel() {
-  moebelListe.get(moebelListe.size());
   return moebelListe.size();
  }
 
  public double getGewichtGesamt() {
-  int summe= 0;
-  for(Moebelstueck gewicht : this.moebelListe) {
-   summe = (int) (summe + Moebelstueck.getGewicht());
+  double gesamtgewicht = 0;
+  for(Moebelstueck m : moebelListe){
+   gesamtgewicht = gesamtgewicht + m.getGewicht();
   }
-  return summe / (this.moebelListe.size() + 1);
+  return gesamtgewicht;
  }
+ // return summe / (this.moebelListe.size() + 1);
+ //}
 
  @Override
  public String toString() {
@@ -82,3 +94,5 @@ public class Raum {
   return ausgabe;
  }
 }
+//  String str = ***** Raum *****;
+//  str =
