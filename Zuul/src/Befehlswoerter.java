@@ -1,5 +1,5 @@
 /*
- * Diese Klasse h�lt eine Aufz�hlung aller Befehlsw�rter, die dem
+ * Diese Klasse hält eine Aufzählung aller Befehlswörter, die dem
  * Spiel bekannt sind. Mit ihrer Hilfe werden eingetippte Befehle
  * erkannt.
  *
@@ -9,13 +9,13 @@
 
 public class Befehlswoerter
 {
-    // ein konstantes Array mit den g�ltigen Befehlsw�rtern
+    // ein konstantes Array mit den gültigen Befehlswörtern
     private static final String gueltigeBefehle[] = {
         "go", "quit", "help"
     };
 
     /**
-     * Konstruktor - initialisiere die Befehlsw�rter.
+     * Konstruktor - initialisiere die Befehlswörter.
      */
     public Befehlswoerter()
     {
@@ -23,9 +23,9 @@ public class Befehlswoerter
     }
 
     /**
-     * Pr�fe, ob eine gegebene Zeichenkette ein g�ltiger
+     * Prüfe, ob eine gegebene Zeichenkette ein gültiger
      * Befehl ist.
-     * @return 'true', wenn die gegebene Zeichenkette ein g�ltiger
+     * @return 'true', wenn die gegebene Zeichenkette ein gültiger
      * Befehl ist, 'false' sonst.
      */
     public boolean istBefehl(String eingabe)
@@ -35,7 +35,7 @@ public class Befehlswoerter
                 return true;
         }
         // Wenn wir hierher gelangen, wurde die Eingabe nicht
-        // in den Befehlsw�rter gefunden.
+        // in den Befehlswörter gefunden.
         return false;
     }
 }

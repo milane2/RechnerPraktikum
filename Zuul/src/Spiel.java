@@ -9,11 +9,11 @@
  *  an ihr die Methode "spielen" aufgerufen werden.
  *
  *  Diese Instanz erzeugt und initialisiert alle anderen Objekte
- *  der Anwendung: Sie legt alle R�ume und einen Parser an und
+ *  der Anwendung: Sie legt alle Räume und einen Parser an und
  *  startet das Spiel. Sie wertet auch die Befehle aus, die der
- *  Parser liefert, und sorgt f�r ihre Ausf�hrung.
+ *  Parser liefert, und sorgt für ihre Ausführung.
  *
- * @author  Michael K�lling und David J. Barnes
+ * @author  Michael Kolling und David J. Barnes
  * @version 2008.03.30
  */
 
@@ -25,6 +25,7 @@ public class Spiel
     /**
      * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
      */
+
     public Spiel()
     {
         raeumeAnlegen();
@@ -44,61 +45,74 @@ public class Spiel
         if(aktuellerRaum.westausgang != null)
             System.out.print("west ");
         System.out.println();
+        if(aktuellerRaum.treppeNachOben != null)
+            System.out.print("up ");
+        if(aktuellerRaum.treppeNachUnten != null)
+            System.out.print("down ");
+        System.out.println();
     }
     /**
      * Erzeuge alle Räume und verbinde ihre Ausgänge miteinander.
      */
     private void raeumeAnlegen() {
-        Raum lichtung, waldstueck, taverne, hexenhaus, dorfplatz;
+        Raum lichtung, waldstueck, taverne, hexenhaus, dorfplatz, gaestezimmer, keller, geheimgang, piratenhoele;
 
-        // die R�ume erzeugen
+        // die Räume erzeugen
         lichtung = new Raum("auf einer Lichtung, umgeben von dunklen Tannen");
         waldstueck = new Raum("im dunklen Wald");
         taverne = new Raum("in der Taverne, mit zwielichtigen Gestalten an der Theke");
         hexenhaus = new Raum("im Hexenhaus");
         dorfplatz = new Raum("auf dem Dorfplatz");
+        gaestezimmer = new Raum("im Gästezimmer");
+        keller = new Raum("im kalten Keller");
+        geheimgang = new Raum("im engen Geheimgang");
+        piratenhoele = new Raum("in der versteckten Piratenhöle");
 
-        // die Ausg�nge initialisieren
-        lichtung.setzeAusgaenge(null, null, null, waldstueck);
-        waldstueck.setzeAusgaenge(null, lichtung, dorfplatz, null);
-        taverne.setzeAusgaenge(dorfplatz, null, null, null);
-        hexenhaus.setzeAusgaenge(null, dorfplatz, null, null);
-        dorfplatz.setzeAusgaenge(waldstueck, null, taverne, hexenhaus);
+        // die Ausgänge initialisieren
+        lichtung.setzeAusgaenge(null,null,null,waldstueck,null,piratenhoele);
+        waldstueck.setzeAusgaenge(null,lichtung,dorfplatz,null,null,null);
+        taverne.setzeAusgaenge(dorfplatz,null,null,null,gaestezimmer,keller);
+        hexenhaus.setzeAusgaenge(null, dorfplatz, null, null, null, null);
+        dorfplatz.setzeAusgaenge(waldstueck,null,taverne,hexenhaus,null,null);
+        gaestezimmer.setzeAusgaenge(null, null, null, null, null,taverne);
+        keller.setzeAusgaenge(geheimgang,null, null, null,taverne, null);
+        geheimgang.setzeAusgaenge(null,piratenhoele, keller, null, null, null);
+        piratenhoele.setzeAusgaenge(null,null,null,geheimgang,lichtung,null);
         aktuellerRaum = lichtung;  // das Spiel startet auf der Lichtung
     }
 
     /**
-     * Die Hauptmethode zum Spielen. L�uft bis zum Ende des Spiels
+     * Die Hauptmethode zum Spielen. Läuft bis zum Ende des Spiels
      * in einer Schleife.
      */
     public void spielen() {
         willkommenstextAusgeben();
 
         // Die Hauptschleife. Hier lesen wir wiederholt Befehle ein
-        // und f�hren sie aus, bis das Spiel beendet wird.
+        // und führen sie aus, bis das Spiel beendet wird.
 
         boolean beendet = false;
         while (!beendet) {
             Befehl befehl = parser.liefereBefehl();
             beendet = verarbeiteBefehl(befehl);
         }
-        System.out.println("Danke f�r dieses Spiel. Auf Wiedersehen.");
+        System.out.println("Danke für dieses Spiel. Auf Wiedersehen.");
     }
 
     /**
-     * Einen Begr��ungstext f�r den Spieler ausgeben.
+     * Einen Begrüßungstext für den Spieler ausgeben.
      */
     private void willkommenstextAusgeben() {
         System.out.println();
         System.out.println("Willkommen zu Zuul!");
-        System.out.println("Entdecke die Welt von Zuul. Doch Vorsicht, �berall lauern Gefahren!");
+        System.out.println("Entdecke die Welt von Zuul. Doch Vorsicht, überall lauern Gefahren!");
         System.out.println("Tippen sie 'help', wenn Sie Hilfe brauchen.");
         System.out.println();
         raumInfoAusgeben();
     }
 
     /**
-     * Verarbeite einen gegebenen Befehl (f�hre ihn aus).
+     * Verarbeite einen gegebenen Befehl (führe ihn aus).
      * @param befehl Der zu verarbeitende Befehl.
      * @return 'true', wenn der Befehl das Spiel beendet, 'false' sonst.
      */
@@ -126,7 +140,7 @@ public class Spiel
     /**
      * Gib Hilfsinformationen aus.
      * Hier geben wir eine etwas alberne und unklare Beschreibung
-     * aus, sowie eine Liste der Befehlsw�rter.
+     * aus, sowie eine Liste der Befehlswörter.
      */
     private void hilfstextAusgeben() {
         System.out.println("Sie haben sich verlaufen. Sie sind allein.");
@@ -164,18 +178,24 @@ public class Spiel
         if(richtung.equals("west")) {
             naechsterRaum = aktuellerRaum.westausgang;
         }
-
+        if(richtung.equals("up")) {
+            naechsterRaum = aktuellerRaum.treppeNachOben;
+        }
+        if(richtung.equals("down")) {
+            naechsterRaum = aktuellerRaum.treppeNachUnten;
+        }
         if (naechsterRaum == null) {
             System.out.println("Dort ist kein Tor!");
         }
         else {
+
             aktuellerRaum = naechsterRaum;
             raumInfoAusgeben();
         }
     }
 
     /**
-     * "quit" wurde eingegeben. �berpr�fe den Rest des Befehls,
+     * "quit" wurde eingegeben. überprüfe den Rest des Befehls,
      * ob das Spiel wirklich beendet werden soll.
      * @return 'true', wenn der Befehl das Spiel beendet, 'false' sonst.
      */
