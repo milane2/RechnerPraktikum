@@ -16,8 +16,7 @@
  * @version 2008.03.30
  */
 
-public class Befehl
-{
+public class Befehl {
     private String befehlswort;
     private String zweitesWort;
 
@@ -29,8 +28,7 @@ public class Befehl
      *                   vom Spiel erkannt gekennzeichnet werden soll.
      * @param zweitesWort Das zweite Wort des Befehls.
      */
-    public Befehl(String erstesWort, String zweitesWort)
-    {
+    public Befehl(String erstesWort, String zweitesWort) {
         befehlswort = erstesWort;
         this.zweitesWort = zweitesWort;
     }
@@ -41,8 +39,7 @@ public class Befehl
      * 'null'.
      * @return Das Befehlswort.
      */
-    public String gibBefehlswort()
-    {
+    public String gibBefehlswort() {
         return befehlswort;
     }
 
@@ -50,24 +47,21 @@ public class Befehl
      * @return Das zweite Wort dieses Befehls. Liefere 'null', wenn
      * es kein zweites Wort gab.
      */
-    public String gibZweitesWort()
-    {
+    public String gibZweitesWort() {
         return zweitesWort;
     }
 
     /**
      * @return 'true', wenn dieser Befehl nicht verstanden wurde.
      */
-    public boolean istUnbekannt()
-    {
+    public boolean istUnbekannt() {
         return (befehlswort == null);
     }
 
     /**
      * @return 'true', wenn dieser Befehl ein zweites Wort hat.
      */
-    public boolean hatZweitesWort()
-    {
+    public boolean hatZweitesWort() {
         return (zweitesWort != null);
     }
 }

@@ -17,8 +17,7 @@
  * @version 2008.03.30
  */
 
-public class Spiel
-{
+public class Spiel {
     private Parser parser;
     private Raum aktuellerRaum;
 
@@ -26,36 +25,21 @@ public class Spiel
      * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
      */
 
-    public Spiel()
-    {
+    public Spiel() {
         raeumeAnlegen();
         parser = new Parser();
     }
 
-    public void raumInfoAusgeben(){
-
+    private void raumInfoAusgeben() {
         System.out.println("Sie sind " + aktuellerRaum.gibBeschreibung());
-        System.out.print("Ausgänge: ");
-        if(aktuellerRaum.nordausgang != null)
-            System.out.print("north ");
-        if(aktuellerRaum.ostausgang != null)
-            System.out.print("east ");
-        if(aktuellerRaum.suedausgang != null)
-            System.out.print("south ");
-        if(aktuellerRaum.westausgang != null)
-            System.out.print("west ");
-        System.out.println();
-        if(aktuellerRaum.treppeNachOben != null)
-            System.out.print("up ");
-        if(aktuellerRaum.treppeNachUnten != null)
-            System.out.print("down ");
+        System.out.print("Ausgänge: " + aktuellerRaum.ausgaengeToString());
         System.out.println();
     }
     /**
      * Erzeuge alle Räume und verbinde ihre Ausgänge miteinander.
      */
     private void raeumeAnlegen() {
-        Raum lichtung, waldstueck, taverne, hexenhaus, dorfplatz, gaestezimmer, keller, geheimgang, piratenhoele;
+        Raum lichtung, waldstueck, taverne, hexenhaus, dorfplatz, gaestezimmer, keller, geheimgang, piratenhoehle;
 
         // die Räume erzeugen
         lichtung = new Raum("auf einer Lichtung, umgeben von dunklen Tannen");
@@ -63,24 +47,32 @@ public class Spiel
         taverne = new Raum("in der Taverne, mit zwielichtigen Gestalten an der Theke");
         hexenhaus = new Raum("im Hexenhaus");
         dorfplatz = new Raum("auf dem Dorfplatz");
-        gaestezimmer = new Raum("im Gästezimmer");
-        keller = new Raum("im kalten Keller");
+        gaestezimmer = new Raum("im gemütlichem Gästezimmer");
+        keller = new Raum("in einen kalten Keller");
         geheimgang = new Raum("im engen Geheimgang");
-        piratenhoele = new Raum("in der versteckten Piratenhöle");
+        piratenhoehle = new Raum("in der versteckten Piratenhöle");
 
         // die Ausgänge initialisieren
-        lichtung.setzeAusgaenge(null,null,null,waldstueck,null,piratenhoele);
-        waldstueck.setzeAusgaenge(null,lichtung,dorfplatz,null,null,null);
-        taverne.setzeAusgaenge(dorfplatz,null,null,null,gaestezimmer,keller);
-        hexenhaus.setzeAusgaenge(null, dorfplatz, null, null, null, null);
-        dorfplatz.setzeAusgaenge(waldstueck,null,taverne,hexenhaus,null,null);
-        gaestezimmer.setzeAusgaenge(null, null, null, null, null,taverne);
-        keller.setzeAusgaenge(geheimgang,null, null, null,taverne, null);
-        geheimgang.setzeAusgaenge(null,piratenhoele, keller, null, null, null);
-        piratenhoele.setzeAusgaenge(null,null,null,geheimgang,lichtung,null);
+        lichtung.setAusgang("down",piratenhoehle);
+        lichtung.setAusgang("west" ,waldstueck);
+        waldstueck.setAusgang("east" , lichtung);
+        waldstueck.setAusgang("south" , dorfplatz);
+        dorfplatz.setAusgang("south" ,taverne);
+        dorfplatz.setAusgang("west" ,hexenhaus);
+        dorfplatz.setAusgang("north",waldstueck);
+        taverne.setAusgang("up" , gaestezimmer);
+        taverne.setAusgang("down" , keller);
+        gaestezimmer.setAusgang("down" , taverne);
+        keller.setAusgang("up" , taverne);
+        keller.setAusgang("north" , geheimgang);
+        geheimgang.setAusgang("south" , keller);
+        geheimgang.setAusgang("east" , piratenhoehle);
+        piratenhoehle.setAusgang("up" , lichtung);
+        piratenhoehle.setAusgang("west" , geheimgang);
+        gaestezimmer.setAusgang("window", dorfplatz);
+        gaestezimmer.setAusgang("window", dorfplatz);
         aktuellerRaum = lichtung;  // das Spiel startet auf der Lichtung
     }
-
     /**
      * Die Hauptmethode zum Spielen. Läuft bis zum Ende des Spiels
      * in einer Schleife.
@@ -98,7 +90,6 @@ public class Spiel
         }
         System.out.println("Danke für dieses Spiel. Auf Wiedersehen.");
     }
-
     /**
      * Einen Begrüßungstext für den Spieler ausgeben.
      */
@@ -110,7 +101,6 @@ public class Spiel
         System.out.println();
         raumInfoAusgeben();
     }
-
     /**
      * Verarbeite einen gegebenen Befehl (führe ihn aus).
      * @param befehl Der zu verarbeitende Befehl.
@@ -123,7 +113,6 @@ public class Spiel
             System.out.println("Ich weiß nicht, was Sie meinen...");
             return false;
         }
-
         String befehlswort = befehl.gibBefehlswort();
         if (befehlswort.equals("help"))
             hilfstextAusgeben();
@@ -134,7 +123,6 @@ public class Spiel
         }
         return moechteBeenden;
     }
-
     // Implementierung der Benutzerbefehle:
 
     /**
@@ -149,7 +137,6 @@ public class Spiel
         System.out.println("Ihnen stehen folgende Befehle zur Verfügung:");
         System.out.println("   go quit help");
     }
-
     /**
      * Versuche, den Raum zu wechseln. Wenn es einen Ausgang gibt,
      * wechsele in den neuen Raum, ansonsten gib eine Fehlermeldung
@@ -161,39 +148,17 @@ public class Spiel
             System.out.println("Wohin möchten Sie gehen?");
             return;
         }
-
         String richtung = befehl.gibZweitesWort();
-
         // Wir versuchen den Raum zu verlassen.
-        Raum naechsterRaum = null;
-        if(richtung.equals("north")) {
-            naechsterRaum = aktuellerRaum.nordausgang;
-        }
-        if(richtung.equals("east")) {
-            naechsterRaum = aktuellerRaum.ostausgang;
-        }
-        if(richtung.equals("south")) {
-            naechsterRaum = aktuellerRaum.suedausgang;
-        }
-        if(richtung.equals("west")) {
-            naechsterRaum = aktuellerRaum.westausgang;
-        }
-        if(richtung.equals("up")) {
-            naechsterRaum = aktuellerRaum.treppeNachOben;
-        }
-        if(richtung.equals("down")) {
-            naechsterRaum = aktuellerRaum.treppeNachUnten;
-        }
+        Raum naechsterRaum = aktuellerRaum.getAusgang(richtung);
         if (naechsterRaum == null) {
             System.out.println("Dort ist kein Tor!");
-        }
-        else {
+        } else {
 
             aktuellerRaum = naechsterRaum;
             raumInfoAusgeben();
         }
     }
-
     /**
      * "quit" wurde eingegeben. überprüfe den Rest des Befehls,
      * ob das Spiel wirklich beendet werden soll.

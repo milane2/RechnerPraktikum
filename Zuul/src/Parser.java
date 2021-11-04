@@ -15,8 +15,7 @@ import java.util.Scanner;
  * @author  Michael Kolling und David J. Barnes
  * @version 2008.03.30
  */
-public class Parser 
-{
+public class Parser {
     private Befehlswoerter befehle;  // h�lt die g�ltigen Befehlsw�rter
     private Scanner leser;         // Lieferant f�r eingegebene Befehle
 
@@ -32,8 +31,7 @@ public class Parser
     /**
      * @return Den nächsten Befehl des Benutzers.
      */
-    public Befehl liefereBefehl() 
-    {
+    public Befehl liefereBefehl()  {
         String eingabezeile;   // für die gesamte Eingabezeile
         String wort1 = null;
         String wort2 = null;
@@ -62,5 +60,4 @@ public class Parser
             return new Befehl(null, wort2);
         }
     }
-
 }
