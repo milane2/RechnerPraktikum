@@ -2,11 +2,13 @@ public class Stuhl extends Moebelstueck {
 
     private double hoeheSitz;
 
-    public Stuhl (String inventarnr, String bezeichnung,double hoehe, double laenge, double breite) {
-
-        super(inventarNr, bezeichnung);
+    public Stuhl(String inventarNr, String bezeichnung){
+        super(inventarNr,bezeichnung);
         this.hoeheSitz = hoeheSitz;
     }
+
+        this.hoeheSitz = hoeheSitz;
+
     //GET
     public double getHoeheSitz(){
         return hoeheSitz;

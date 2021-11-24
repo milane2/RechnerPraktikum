@@ -4,8 +4,9 @@ public class Tisch extends Moebelstueck {
     private double laenge;
     private double breite;
 
-    public Tisch (String inventarnr, String bezeichnung) {
-        super(inventarNr, bezeichnung);
+    public Tisch(String bezeichnung,String inventarNr) {
+        super( bezeichnung,inventarNr);
+
     }
 
     //GET
