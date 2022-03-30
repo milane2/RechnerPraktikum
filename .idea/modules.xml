@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/RP.iml" filepath="$PROJECT_DIR$/RP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Fussball/RP Fussball.iml" filepath="$PROJECT_DIR$/Fussball/RP Fussball.iml" />
       <module fileurl="file://$PROJECT_DIR$/Swing/Swing.iml" filepath="$PROJECT_DIR$/Swing/Swing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inf_G_U_I/Taschenrechner.iml" filepath="$PROJECT_DIR$/Inf_G_U_I/Taschenrechner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inf_G_U_I/Taxi_GUI.iml" filepath="$PROJECT_DIR$/Inf_G_U_I/Taxi_GUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unfertig/Unfertig.iml" filepath="$PROJECT_DIR$/Unfertig/Unfertig.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
     </modules>

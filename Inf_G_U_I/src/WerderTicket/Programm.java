@@ -1,10 +1,8 @@
-package Rabattrechner;
-
-
+package WerderTicket;
 
 public class Programm {
 
     public static void main(String[] args) {
-         new MyFrame();
+       Werderframe frame = new Werderframe();
     }
 }
